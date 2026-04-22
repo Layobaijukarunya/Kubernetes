@@ -1,0 +1,19 @@
+Docker build -t node-docker
+
+
+Docker run -p 3000:3000 -d node-docker
+
+
+        Goto local host 3000
+
+
+Docker login -u layobaiju01
+
+
+Docker tag node-docker layobaiju01/node-docker:1.0
+
+
+Docker push layobaiju01/node-docker:1.0
+
+
+Minikube start

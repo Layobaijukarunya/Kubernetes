@@ -1,0 +1,29 @@
+cd node
+
+
+
+kubectl
+
+
+
+kubectl create deployment node-docker --image=layobaiju01/node-docker:1.0 --dry-run=client -o yaml > deployment.yaml
+
+
+
+kubectl apply -f deployment.yaml
+
+
+kubectl expose deployment node-docker --port=80 --target-port=3000 --type =LoadBalancer --dry-run=client -o yaml > service.yaml
+
+
+kubectl apply -f service.yaml
+
+
+
+kubectl get all
+
+
+minikube service node-docker --url
+
+
+                       Go to the url
